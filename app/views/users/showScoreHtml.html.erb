@@ -1,0 +1,23 @@
+<div class="mb-3 col-12 d-flex row"><div class="col-4"> <b>Votre prénom :</b> </div> <div class="col-8"> <%= @user.first_name %></div></div>
+<div class="mb-3 col-12 d-flex row"><div class="col-4"> <b>Votre nom :</b> </div> <div class="col-8"> <%= @user.last_name %></div></div>
+<div class="mb-3 col-12 d-flex row"><div class="col-4"> <b>Votre date de naissance :</b> </div> <div class="col-8"> <%= @user.birthday %></div></div>
+<div class="mb-3 col-12 d-flex row"><div class="col-4"> <b>Votre profession :</b> </div> <div class="col-8"> <%= @user.job %></div></div>
+<div class="mb-3 col-12 d-flex row"><div class="col-4"> <b>Votre email :</b> </div> <div class="col-8"> <%= @user.email %></div></div>
+<div class="mb-3 col-12 d-flex row">
+        <div class="col-4"> <b>Votre choix :</b> </div>
+        <div class="col-8
+        <% if @user.number == @random %>
+            alert alert-success
+        <% else %>
+            alert alert-danger
+        <% end %>
+        "> <%= @user.number %> 
+        <% if @user.number == @random %>
+            <b class="ml-2">Bravo ! Gagné </b>
+        <% else %>
+            <b class="ml-2">Perdu :( Vous étiez à <%= @difference %> nombre(s) près !</b>
+        <% end %>
+        </div>
+</div>
+
+<a href="<%= users_show_path(@user.id) %>" class="link-item">Revenir à la page précédente</a>

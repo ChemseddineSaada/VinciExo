@@ -1,0 +1,31 @@
+<h1 class="text-center mb-5">Formulaire d'inscription</h1>
+
+<% flash.each do |key, value| %>
+    <%= content_tag :div, value, class: "alert alert-success text-center" %>
+<% end %>
+  
+
+<%= simple_form_for(@user, html: { class: 'form-group' }, defaults: 
+                                                        { input_html: { class: 'col-8' },
+                                                          label_html: { class: 'col-4' },
+                                                          wrapper_html: { class: 'form-inline' }} ) do |f| %>
+
+    <%= f.input :first_name, label: 'Prénom', disabled: true %>
+    <%= f.input :last_name, label: 'Nom', disabled: true %>
+    <%= f.input :birthday,label: 'Date de naissance', as: :date, start_year: Date.today.year - 90,
+                                                        end_year: Date.today.year - 16,
+                                                        order: [:day, :month, :year],
+                                                        input_html: {class:'col-5'} , disabled: true %>
+    <%= f.input :job, label: 'Profession', disabled: true %>
+    <%= f.input :email, label:'Email', as: :email, disabled: true %>
+    <%= f.input :number, label: 'Choisis un nombre', disabled: true %>
+
+<% end %>
+
+<div class="row justify-content-between mt-5">
+
+    <a href="<%= users_showScoreHtml_path(@user.id) %>" class="btn btn-success col-3 ml-5">Format HTML</a>
+    <a href="<%= users_showScoreJson_path(@user.id) %>" class="btn btn-dark col-3">Format JSON</a>
+    <a href="<%= users_delete_path(@user.id) %>" data-method="DELETE" class="btn btn-danger col-3">Se désinscrire</a>
+
+</div>

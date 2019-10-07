@@ -1,3 +1,12 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  get 'users/new'
+  get 'users/show'
+  get 'users/create'
+  get 'users/delete'
+  get 'users/showScoreHtml', to: 'users#showScoreHtml'
+  get 'users/showScoreJson', to: 'users#showScoreJson'
+
+  root to: 'users#new'
+  resources :users
 end
