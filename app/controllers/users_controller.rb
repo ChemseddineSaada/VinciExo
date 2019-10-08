@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.all
+    @user = User.new
   end
 
   def new
@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:format])
     @user.destroy
-    redirect_to users_new_path(@user.id)
+    redirect_to root_path
   end
 
   def create

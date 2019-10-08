@@ -1,3 +1,69 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+header{
+    border-bottom: 1px solid black;
+}
+
+body{
+    padding-bottom: 80px;
+}
+
+.header-logo{
+    width: 400px;
+    height: auto;
+    align-self: center;
+}
+
+h1{
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 2rem !important;
+}
+
+h2{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+}
+
+label{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+}
+
+.btn-container{
+    position: relative;
+}
+
+.btn-signUp{
+    padding-right: 45px !important;
+    border: 1px solid black !important;
+    text-transform: uppercase;
+    font-weight: bolder !important;
+    z-index: 1;
+
+    &:hover{
+        border: 1px solid #ee1429!important;
+        color: #ee1429 !important;
+    }
+}
+
+.btn-vinci{
+    display: block;
+    position: absolute;
+    background-image: image-url("btn-signup.png") !important;
+    background-size: 25px 25px;
+    background-repeat: no-repeat;
+    width: 25px !important;
+    height: 25px;
+    top: 6px;
+    left: 53.2%;
+    z-index : -1;
+    cursor: pointer;
+}
+
+.invalid-feedback{
+    margin-left: 33.4% !important;
+}
+

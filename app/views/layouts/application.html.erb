@@ -4,18 +4,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="UTF-8">
     <title>Vinciexo</title>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto:300&display=swap" rel="stylesheet">
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
-    <header class="container-fluid mb-5">
-      <img src="" alt="Logo Vinci">
+    <header class="container-fluid mb-5 d-flex justify-content-center row">
+    <div class="col-12 justify-content-center d-flex">
+      <a href="<%= root_path %>"><img class="header-logo mt-4 mb-4" src="<%= asset_url('vinci-logo.png') %>" alt="Logo Vinci"></a>
+    </div>
+      <h1 class="mb-5 mt-4">Bienvenu sur la page de test de compétences</h1>
     </header>
     <div class="container">
       <%= yield %>

@@ -1,4 +1,4 @@
-<h1 class="text-center mb-5">Formulaire d'inscription</h1>
+<h2 class="text-center mb-5">Formulaire d'inscription</h2>
 
 <%= simple_form_for(@user, html: { class: 'form-group' }, defaults: 
                                                         { input_html: { class: 'col-8' },
@@ -12,9 +12,42 @@
                                                         order: [:day, :month, :year],
                                                         input_html: {class:'col-5'} %>
     <%= f.input :job, label: 'Profession' %>
-    <%= f.input :email, label:'Email', as: :email, placeholder:'utilisateur@domaine.com', required: true, error: 'Email invalide'%>
+    <%= f.input :email, label:'Email', as: :email, placeholder:'utilisateur@domaine.com', required: true %>
     <%= f.input :number, label: 'Choisis un nombre', hint:'Le nombre doit être compris entre 0 et 10', required: true,input_html:{ class:'col-3 mr-3', min: 0, max: 10 }, error:'Le nombre saisi n\'est pas compris entre 0 et 10' %>
-
-    <%= f.button :submit, class: 'btn-signUp', value: 'S\'inscrire' %>
+    
+    <div class="d-flex justify-content-center btn-container">                                                    
+      <%= f.button :submit, class: 'btn-signUp', value: 'S\'inscrire', data: { disable_with: 'Traitement...' }  %>
+      <span class="btn-vinci"></span>
+    </div>    
 
 <% end %>
+
+<script>
+
+  $('.btn-signUp').mouseenter(function () {
+
+      $('.btn-vinci').animate(
+        { deg: 360 },
+        {
+          duration: 1200,
+          step: function(now) {
+            $(this).css({ transform: 'rotate(' + now + 'deg)' });
+          }
+        }
+      );  
+    });
+
+    $('.btn-signUp').mouseleave(function(){
+
+      $('.btn-vinci').animate(
+        { deg: -360 },
+        {
+          duration: 1200,
+          step: function(now) {
+            $(this).css({ transform: 'rotate(' + now + 'deg)' });
+          }
+        }
+      ); 
+    });
+
+</script>
